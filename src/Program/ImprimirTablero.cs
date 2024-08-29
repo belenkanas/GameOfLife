@@ -1,33 +1,41 @@
+using System;
+using System.Text;
+using System.Threading;
+
 namespace Ucu.Poo.GameOfLife;
 
 public class ImprimirTablero
 {
-    bool[,] b //variable que representa el tablero
-    int width //variabe que representa el ancho del tablero
-    int height //variabe que representa altura del tablero
-    while (true)
+    public static void Imprimir(bool[,]gameBoard)
     {
-        Console.Clear();
-        StringBuilder s = new StringBuilder();
-        for (int y = 0; y<height;y++)
+        
+        int width = gameBoard.GetLength(0);
+        int height = gameBoard.GetLength(1);
         {
-            for (int x = 0; x<width; x++)
+            Console.Clear();
+            StringBuilder s = new StringBuilder();
+            for (int y = 0; y < height; y++)
             {
-                if(b[x,y])
+                for (int x = 0; x < width; x++)
                 {
-                    s.Append("|X|");
+                    if (gameBoard[x, y])
+                    {
+                        s.Append("|X|");
+                    }
+                    else
+                    {
+                        s.Append("___");
+                    }
                 }
-                else
-                {
-                    s.Append("___");
-                }
+
+                s.Append("\n");
             }
-            s.Append("\n");
+
+            Console.WriteLine(s.ToString());
+            //=================================================
+            //Invocar método para calcular siguiente generación
+            //=================================================
+            Thread.Sleep(300);
         }
-        Console.WriteLine(s.ToString());
-        //=================================================
-        //Invocar método para calcular siguiente generación
-        //=================================================
-        Thread.Sleep(300);
     }
 }

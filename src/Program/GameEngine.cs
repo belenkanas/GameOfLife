@@ -3,11 +3,7 @@ using System.IO;
 
 public class GameEngine
 {
-    private bool[,] gameBoard = {
-        { true, false, false },
-        { false, true, true },
-        { true, true, false }
-    };
+    private bool[,] gameBoard;
     
     public void CloneBoard()
     {

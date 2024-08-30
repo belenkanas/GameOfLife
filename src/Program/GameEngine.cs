@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 
-public class GameEngine
+public class GameEngine //Lógica del juego
 {
     private bool[,] gameBoard;
 

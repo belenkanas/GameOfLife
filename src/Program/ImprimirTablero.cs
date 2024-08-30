@@ -6,7 +6,7 @@ namespace Ucu.Poo.GameOfLife;
 
 public class ImprimirTablero
 {
-    public static void Imprimir(bool[,]gameBoard)
+    public static bool Imprimir(bool[,]gameBoard)
     {
         
         int width = gameBoard.GetLength(0);
@@ -37,5 +37,6 @@ public class ImprimirTablero
             //=================================================
             Thread.Sleep(300);
         }
+        return true;
     }
 }

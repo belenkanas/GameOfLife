@@ -7,17 +7,16 @@ namespace Ucu.Poo.GameOfLife
     {
         static void Main(string[] args)
         {
-            LeerTablero lector = new LeerTablero();
-            string[] contentLines = lector.Leer();
+            string[] contentLines = LeerTablero.Leer("board.txt");
             bool[,] gameBoard = MatrizArchivo.Matriz(contentLines);
             
             // Crear una instancia de GameEngine e inicializar el tablero
             GameEngine gameEngine = new GameEngine();
-            gameEngine.SetGameBoard(gameBoard);
+            gameEngine.GameBoard = gameBoard;
 
             Console.WriteLine("Inicio del juego:");
 
-            while (true)
+            while (ImprimirTablero.Imprimir(gameBoard))
             {
                 // Imprimir el tablero actual
                 ImprimirTablero.Imprimir(gameBoard);
@@ -26,25 +25,8 @@ namespace Ucu.Poo.GameOfLife
                 gameEngine.CloneBoard();
 
                 // Actualizar el tablero
-                gameBoard = gameEngine.GetGameBoard();
+                gameBoard = gameEngine.GameBoard;
             }
         }
     }
 }
-            
-            
-            
-            
-            
-          /*  LeerTablero.Leer("board.txt");
-            //MatrizArchivo.Matriz(bool[,]);
-            //GameEngine.CloneBoard();
-            ImprimirTablero.Imprimir(bool[,]);
-            Console.WriteLine("Inicio del juego:");
-            
-            gameEngine.CloneBoard();
-            ImprimirTablero imprimirTablero = new ImprimirTablero();
-
-        }
-    }
-}*/

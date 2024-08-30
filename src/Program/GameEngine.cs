@@ -4,6 +4,12 @@ using System.IO;
 public class GameEngine
 {
     private bool[,] gameBoard;
+
+    public bool[,] GameBoard
+    {
+        get { return gameBoard;}
+        set { gameBoard = value; }
+    }
     
     public void CloneBoard()
     {

@@ -5,7 +5,7 @@ public class GameEngine //Lógica del juego
 {
     private bool[,] gameBoard;
 
-    public bool[,] GameBoard
+    public bool[,] GameBoard      // Esto es para que el objeto pueda ser llamado en la ejecución del programa.
     {
         get { return gameBoard;}
         set { gameBoard = value; }

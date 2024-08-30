@@ -1,3 +1,7 @@
+using System;
+using System.Text;
+using System.Threading;
+
 namespace Ucu.Poo.GameOfLife;
 
 public class ImprimirTablero
